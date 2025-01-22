@@ -281,9 +281,16 @@ footer
   grid-area: footer
   text-align: center
   font-size: 0.9em
-  padding-block: 2em
+  padding-block: 1em
   background: var(--footer)
   border-top: var(---dropdown-border)
+  p
+    margin-block: 1em
+  a
+    color: var(--link)
+    text-decoration: none
+    &:hover
+      color: var(--link-hover)
 
 @media screen and (max-width: 140ch)
   body

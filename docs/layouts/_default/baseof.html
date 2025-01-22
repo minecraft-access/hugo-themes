@@ -119,6 +119,16 @@
     </div>
 {{- end -}}
 <footer>
+    {{- with getenv "GITHUB_REPOSITORY" -}}
+        <p>
+            <a href="https://github.com/{{- . -}}">{{- . -}}</a>
+            {{- with getenv "GITHUB_SHA" }}
+                @ <a href="https://github.com/{{- getenv "GITHUB_REPOSITORY" -}}/commit/{{- . -}}">
+                    <abbr title="{{- . -}}">{{- . | truncate 9 "" -}}</abbr>
+                </a>
+            {{- end -}}
+        </p>
+    {{- end -}}
     <p>
         NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
     </p>
