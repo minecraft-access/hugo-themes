@@ -112,7 +112,7 @@
         </p>
         <p>
             <a class="edit-link"
-               href="https://github.com/khanshoaib3/minecraft-access/blob/1.21/docs/content/{{- .Page.File.Path -}}">
+               href="https://github.com/{{- getenv "GITHUB_REPOSITORY" -}}/blob/{{- getenv "GITHUB_REF_NAME" -}}/docs/content/{{- .Page.File.Path -}}">
                 {{- partial "icon" (dict "Icon" "edit") }} Edit this page
             </a>
         </p>
