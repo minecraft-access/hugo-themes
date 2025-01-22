@@ -1,0 +1,18 @@
+{{- define "title" -}}404 | {{ .Site.Title -}}{{- end -}}
+
+{{- define "body" -}}
+    <div class="content">
+        <main>
+            <article>
+                <h1>404 Page Not Found</h1>
+                <p>
+                    The page you’re looking for doesn't exist or has been moved.
+                    If you continue to experience issues, feel free to join our
+                    <a href="https://discord.gg/yQjjsDqWQX">Discord server</a>
+                    for assistance.
+                </p>
+            </article>
+            <a class="cta" href="{{- .Site.Home.RelPermalink -}}">Return Home</a>
+        </main>
+    </div>
+{{- end -}}
