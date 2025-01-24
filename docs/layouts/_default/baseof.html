@@ -112,7 +112,8 @@
         </p>
         <p>
             <a class="edit-link"
-               href="https://github.com/{{- getenv "GITHUB_REPOSITORY" -}}/blob/{{- getenv "GITHUB_REF_NAME" -}}/docs/content/{{- .Page.File.Path -}}">
+               href="https://github.com/{{- getenv "GITHUB_REPOSITORY" -}}/blob/{{- getenv "GITHUB_REF_NAME" -}}/docs/content/{{- .Page.File.Path -}}"
+               target="_blank">
                 {{- partial "icon" (dict "Icon" "edit") }} Edit this page
             </a>
         </p>
@@ -121,9 +122,9 @@
 <footer>
     {{- with getenv "GITHUB_REPOSITORY" -}}
         <p>
-            <a href="https://github.com/{{- . -}}">{{- . -}}</a>
+            <a href="https://github.com/{{- . -}}" target="_blank">{{- . -}}</a>
             {{- with getenv "GITHUB_SHA" }}
-                @ <a href="https://github.com/{{- getenv "GITHUB_REPOSITORY" -}}/commit/{{- . -}}">
+                @ <a href="https://github.com/{{- getenv "GITHUB_REPOSITORY" -}}/commit/{{- . -}}" target="_blank">
                     <abbr title="{{- . -}}">{{- . | truncate 9 "" -}}</abbr>
                 </a>
             {{- end -}}
