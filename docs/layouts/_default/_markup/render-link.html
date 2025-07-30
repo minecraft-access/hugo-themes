@@ -1,9 +1,10 @@
 {{- $url := urls.Parse .Destination -}}
 {{- $external := and $url.IsAbs (not (or
+(partial "inline/path-prefix" (dict "Url" $url "Host" "mcaccess.org" "Path" "/"))
+(strings.HasSuffix (strings.ToLower $url.Hostname) ".mcaccess.org")
 (partial "inline/path-prefix" (dict "Url" $url "Host" "github.com" "Path" "/minecraft-access"))
 (partial "inline/path-prefix" (dict "Url" $url "Host" "modrinth.com" "Path" "/mod/minecraft-access"))
 (partial "inline/path-prefix" (dict "Url" $url "Host" "modrinth.com" "Path" "/organization/minecraft-access"))
-(partial "inline/path-exact" (dict "Url" $url "Host" "discord.gg" "Path" "/yqjjsdqwqx"))
 (partial "inline/path-prefix" (dict "Url" $url "Host" "curseforge.com" "Path" "/minecraft/mc-mods/blind-accessibility"))
 (partial "inline/path-prefix" (dict "Url" $url "Host" "legacy.curseforge.com" "Path" "/minecraft/mc-mods/blind-accessibility"))
 )) -}}
